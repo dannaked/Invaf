@@ -2,27 +2,42 @@
 <html>
 <head>
 	<title>Invaf</title>
-	<!--
+<!--
 	<link rel="stylesheet" type="text/css" href="node_modules/bootstrap/dist/css/bootstrap-theme.min.css">
-	-->
+-->
+<!--Material DEsign
+	<link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.indigo-pink.min.css">
+	
+	<script src="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.min.js"></script>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+-->
 	<meta charset="UTF-8">
 	<link rel="stylesheet" type="text/css" href="assets/css/normalize.css">
 	<link rel="stylesheet" type="text/css" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="assets/css/stiky-footer.css">
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 
+<!-- bootstrap.js-->
+	<script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+
+<!-- chartist -->
+	<link rel="stylesheet" href="assets/css/chartist.min.css">
+
 </head>
+<!-- ===========================================Empieza el body ======================================================== -->
 <body>
 	<header>
-	 	<nav class="navbar navbar-default navbar-fixed-top">
+	 	<nav class="navbar navbar-default navbar-fixed-top toogle-sidebar ">
 	  		<div class="container">
 		  		<div class="navbar-header">
 	      			<a class="navbar-brand" href="#">
 	       				 <img alt="SIEMPA" src="">
 	      			</a>
 	   			</div>
-
+      			<button type="button" class="btn navbar-btn glyphicon glyphicon-menu-left" aria-label="Left Align"></button>
 		    	<a href="login.html">
 		    		<button type="button" class="btn btn-default navbar-btn pull-right " >
 		    		Salir
@@ -37,42 +52,260 @@
 		</nav>
 	</header>
 
-
-	<div class="container-fluid h ">
-  		<div class=" row page-header  ">
-  			<div class="col-xs-12 .col-sm-12 col-md-12 .col-lg-12  ">
-  				<h1>Bienvenido al siempa</h1>
-  			</div>
-  		</div>
-  		<div class="row">
-  			<div class=" col-md-2 ">
+<!-- ===========================================Empieza el sidebar ======================================================== -->
+	<div class=" col-sm-3 col-md-2 h-sidebar ">
   				<ul class="nav nav-pills nav-stacked">
-				  <li role="presentation" class="active"><a href="#">Consultas</a></li>
-				  <li role="presentation"><a href="#">Altas</a></li>
-				  <li role="presentation"><a href="#">Administración</a></li>
+				  <li role="presentation" class="active">
+				  	<a href="#"><span class=" glyphicon glyphicon-tasks " aria-hidden="true"></span> Consultas</a>
+				  	<ul class=" nav nav-stacked sidebar submenu-sidebar " >
+				  		<!--Probablemente este menu sea de lo más inutil
+				  		ha que revisar el flujo de trabajo
+				  		-->
+				  		<li><a href="">Nueva</a>
+				  		</li>
+				  		<li><a href="">Recientes</a>
+				  		</li>
+				  		<li><a href="">Guardadas</a>
+				  		</li>
+				  	</ul>
+				  </li>
+				  <li role="presentation">
+				  	<a href="#"><span class=" glyphicon glyphicon-file " aria-hidden="true"></span> Reportes</a>
+				  </li>
+				  <li role="presentation">
+				  	<a href="#"><span class=" glyphicon glyphicon-floppy-open " aria-hidden="true"></span> Altas</a>
+				  </li>
+				  <li role="presentation">
+				  	<a href="#"><span class=" glyphicon glyphicon-cog " aria-hidden="true"></span> Administración</a>
+				  </li>
 				</ul>
-  			</div>
-  			<div class="col-md-10">
-  				<div>
-  					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus provident, molestias harum laboriosam nostrum nam cupiditate minus, veritatis obcaecati, assumenda sapiente impedit velit dolorem ipsam officia cumque doloribus modi vitae!
-  				</div>
-  				<div>
-  					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus provident, molestias harum laboriosam nostrum nam cupiditate minus, veritatis obcaecati, assumenda sapiente impedit velit dolorem ipsam officia cumque doloribus modi vitae!
-  				</div>
-  				<div>
-  					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus provident, molestias harum laboriosam nostrum nam cupiditate minus, veritatis obcaecati, assumenda sapiente impedit velit dolorem ipsam officia cumque doloribus modi vitae!
-  				</div>
-  			</div>
   		</div>
-	<section class="hsect"></section>
-	<section class="hsect"></section>
-	<section class="hsect"></section>
+<!-- ===========================================Empieza el container ======================================================== -->
 
+	<div class=" container-fluid col-md-10 col-md-offset-2 ">
+  		<div class=" row h">
+  			<div class="col-xs-12 .col-sm-8 col-md-10 .col-lg-10 ">
+  				<h1>Bienvenido al siempa</h1>
+  			<hr>
+  			</div>
+  			
+  		</div><!--ends welcome row-->
+		
+		<div class="row">
+			<div class="col-md-4">
+				<div class="card">
+	                <div class="header">
+
+	                   	<h4 class="title">Email Statistics</h4>
+	                   	<p class="category">Last Campaign Performance</p>
+	                </div>
+                	<div class="content">
+
+                	   	<div id="chartEmail" class="ct-chart ct-perfect-fourth"><svg style="width: 100%; height: 100%;" class="ct-chart-pie" height="100%" width="100%" xmlns:ct="http://gionkunz.github.com/chartist-js/ct"><g class="ct-series ct-series-c"><path ct:value="6" class="ct-slice-pie" d="M143.5,5A117.5,117.5,0,0,0,99.864,13.403L143.5,122.5Z"></path></g><g class="ct-series ct-series-b"><path ct:value="32" class="ct-slice-pie" d="M100.245,13.251A117.5,117.5,0,0,0,63.365,208.434L143.5,122.5Z"></path></g><g class="ct-series ct-series-a"><path ct:value="62" class="ct-slice-pie" d="M63.066,208.154A117.5,117.5,0,1,0,143.5,5L143.5,122.5Z"></path></g><g><text class="ct-label" text-anchor="middle" dy="144.12731747022482" dx="198.12436854593477">62%</text><text class="ct-label" text-anchor="middle" dy="111.49134776808874" dx="85.79062401968952">32%</text><text class="ct-label" text-anchor="	middle" dy="64.79062401968955" dx="132.49134776808862">6%</text></g></svg></div>
+               		</div>
+                	<div class="footer">
+
+                		<div class="legend">
+                		   	<i class="fa fa-circle text-info"></i> Open
+                    		<i class="fa fa-circle text-danger"></i> Bounce
+                    		<i class="fa fa-circle text-warning"></i> Unsubscribe
+                    	</div>
+
+                    	<hr>
+
+                    	<div class="stats">
+                       		<i class="fa fa-clock-o"></i> Campaign sent 2 days ago
+                    	</div>                                    
+            		</div>
+	   			</div>
+			</div>
+
+			<div class="col-md-6">
+				<div class="card">
+               		<div class="header">
+                   		<h4 class="title">Users Behavior</h4>
+                   		<p class="category">24 Hours performance</p>
+               		</div>
+                   	<div class="content">
+                   		<div id="chartHours" class="ct-chart"><svg style="width: 100%; height: 245px;" class="ct-chart-line" height="245px" width="100%" xmlns:ct="http://gionkunz.github.com/chartist-js/ct"><g class="ct-grids"><line class="ct-grid ct-vertical" x2="620" x1="50" y2="210" y1="210"></line><line class="ct-grid ct-vertical" x2="620" x1="50" y2="185.625" y1="185.625"></line><line class="ct-grid ct-vertical" x2="620" x1="50" y2="161.25" y1="161.25"></line><line class="ct-grid ct-vertical" x2="620" x1="50" y2="136.875" y1="136.875"></line><line class="ct-grid ct-vertical" x2="620" x1="50" y2="112.5" y1="112.5"></line><line class="ct-grid ct-vertical" x2="620" x1="50" y2="88.125" y1="88.125"></line><line class="ct-grid ct-vertical" x2="620" x1="50" y2="63.75" y1="63.75"></line><line class="ct-grid ct-vertical" x2="620" x1="50" y2="39.375" y1="39.375"></line><line class="ct-grid ct-vertical" x2="620" x1="50" y2="15" y1="15"></line></g><g><g class="ct-series ct-series-a"><path class="ct-line" d="M50,140.044L121.25,116.156L192.5,90.563L263.75,90.075L335,74.963L406.25,67.163L477.5,39.863L548.75,40.594L620,26.7L691.25,17.925L762.5,3.787L833.75,-20.1"></path><line ct:value="287" class="ct-point" y2="140.04375" x2="50.01" y1="140.04375" x1="50"></line><line ct:value="385" class="ct-point" y2="116.15625" x2="121.26" y1="116.15625" x1="121.25"></line><line ct:value="490" class="ct-point" y2="90.5625" x2="192.51" y1="90.5625" x1="192.5"></line><line ct:value="492" class="ct-point" y2="90.075" x2="263.76" y1="90.075" x1="263.75"></line><line ct:value="554" class="ct-point" y2="74.9625" x2="335.01" y1="74.9625" x1="335"></line><line ct:value="586" class="ct-point" y2="67.1625" x2="406.26" y1="67.1625" x1="406.25"></line><line ct:value="698" class="ct-point" y2="39.86250000000001" x2="477.51" y1="39.86250000000001" x1="477.5"></line><line ct:value="695" class="ct-point" y2="40.59375" x2="548.76" y1="40.59375" x1="548.75"></line><line ct:value="752" class="ct-point" y2="26.69999999999999" x2="620.01" y1="26.69999999999999" x1="620"></line><line ct:value="788" class="ct-point" y2="17.92500000000001" x2="691.26" y1="17.92500000000001" x1="691.25"></line><line ct:value="846" class="ct-point" y2="3.7874999999999943" x2="762.51" y1="3.7874999999999943" x1="762.5"></line><line ct:value="944" class="ct-point" y2="-20.099999999999994" x2="833.76" y1="-20.099999999999994" x1="833.75"></line></g><g class="ct-series ct-series-b"><path class="ct-line" d="M50,193.669L121.25,172.95L192.5,175.144L263.75,151.5L335,140.044L406.25,128.344L477.5,103.969L548.75,103.481L620,78.619L691.25,77.887L762.5,77.4L833.75,52.294"></path><line ct:value="67" class="ct-point" y2="193.66875" x2="50.01" y1="193.66875" x1="50"></line><line ct:value="152" class="ct-point" y2="172.95" x2="121.26" y1="172.95" x1="121.25"></line><line ct:value="143" class="ct-point" y2="175.14375" x2="192.51" y1="175.14375" x1="192.5"></line><line ct:value="240" class="ct-point" y2="151.5" x2="263.76" y1="151.5" x1="263.75"></line><line ct:value="287" class="ct-point" y2="140.04375" x2="335.01" y1="140.04375" x1="335"></line><line ct:value="335" class="ct-point" y2="128.34375" x2="406.26" y1="128.34375" x1="406.25"></line><line ct:value="435" class="ct-point" y2="103.96875" x2="477.51" y1="103.96875" x1="477.5"></line><line ct:value="437" class="ct-point" y2="103.48125" x2="548.76" y1="103.48125" x1="548.75"></line><line ct:value="539" class="ct-point" y2="78.61875" x2="620.01" y1="78.61875" x1="620"></line><line ct:value="542" class="ct-point" y2="77.88749999999999" x2="691.26" y1="77.88749999999999" x1="691.25"></line><line ct:value="544" class="ct-point" y2="77.4" x2="762.51" y1="77.4" x1="762.5"></line><line ct:value="647" class="ct-point" y2="52.29374999999999" x2="833.76" y1="52.29374999999999" x1="833.75"></line></g><g class="ct-series ct-series-c"><path class="ct-line" d="M50,204.394L121.25,182.456L192.5,193.669L263.75,183.675L335,163.688L406.25,151.744L477.5,135.169L548.75,134.925L620,102.994L691.25,110.063L762.5,110.063L833.75,85.931"></path><line ct:value="23" class="ct-point" y2="204.39375" x2="50.01" y1="204.39375" x1="50"></line><line ct:value="113" class="ct-point" y2="182.45625" x2="121.26" y1="182.45625" x1="121.25"></line><line ct:value="67" class="ct-point" y2="193.66875" x2="192.51" y1="193.66875" x1="192.5"></line><line ct:value="108" class="ct-point" y2="183.675" x2="263.76" y1="183.675" x1="263.75"></line><line ct:value="190" class="ct-point" y2="163.6875" x2="335.01" y1="163.6875" x1="335"></line><line ct:value="239" class="ct-point" y2="151.74375" x2="406.26" y1="151.74375" x1="406.25"></line><line ct:value="307" class="ct-point" y2="135.16875" x2="477.51" y1="135.16875" x1="477.5"></line><line ct:value="308" class="ct-point" y2="134.925" x2="548.76" y1="134.925" x1="548.75"></line><line ct:value="439" class="ct-point" y2="102.99375" x2="620.01" y1="102.99375" x1="620"></line><line ct:value="410" class="ct-point" y2="110.0625" x2="691.26" y1="110.0625" x1="691.25"></line><line ct:value="410" class="ct-point" y2="110.0625" x2="762.51" y1="110.0625" x1="762.5"></line><line ct:value="509" class="ct-point" y2="85.93125" x2="833.76" y1="85.93125" x1="833.75"></line></g></g><g class="ct-labels"><foreignObject height="20" width="71.25" y="215" x="50" style="overflow: visible;"><span xmlns="http://www.w3.org/1999/xhtml" class="ct-label ct-horizontal ct-end" style="width: 71px; height: 20px">9:00AM</span></foreignObject><foreignObject height="20" width="71.25" y="215" x="121.25" style="overflow: visible;"><span xmlns="http://www.w3.org/1999/xhtml" class="ct-label ct-horizontal ct-end" style="width: 71px; height: 20px">12:00AM</span></foreignObject><foreignObject height="20" width="71.25" y="215" x="192.5" style="overflow: visible;"><span xmlns="http://www.w3.org/1999/xhtml" class="ct-label ct-horizontal ct-end" style="width: 71px; height: 20px">3:00PM</span></foreignObject><foreignObject height="20" width="71.25" y="215" x="263.75" style="overflow: visible;"><span xmlns="http://www.w3.org/1999/xhtml" class="ct-label ct-horizontal ct-end" style="width: 71px; height: 20px">6:00PM</span></foreignObject><foreignObject height="20" width="71.25" y="215" x="335" style="overflow: visible;"><span xmlns="http://www.w3.org/1999/xhtml" class="ct-label ct-horizontal ct-end" style="width: 71px; height: 20px">9:00PM</span></foreignObject><foreignObject height="20" width="71.25" y="215" x="406.25" style="overflow: visible;"><span xmlns="http://www.w3.org/1999/xhtml" class="ct-label ct-horizontal ct-end" style="width: 71px; height: 20px">12:00PM</span></foreignObject><foreignObject height="20" width="71.25" y="215" x="477.5" style="overflow: visible;"><span xmlns="http://www.w3.org/1999/xhtml" class="ct-label ct-horizontal ct-end" style="width: 71px; height: 20px">3:00AM</span></foreignObject><foreignObject height="20" width="71.25" y="215" x="548.75" style="overflow: visible;"><span xmlns="http://www.w3.org/1999/xhtml" class="ct-label ct-horizontal ct-end" style="width: 71px; height: 20px">6:00AM</span></foreignObject><foreignObject width="30" height="24.375" x="10" y="185.625" style="overflow: visible;"><span xmlns="http://www.w3.org/1999/xhtml" class="ct-label ct-vertical ct-start" style="height: 24px; width: 30px">0</span></foreignObject><foreignObject width="30" height="24.375" x="10" y="161.25" style="overflow: visible;"><span xmlns="http://www.w3.org/1999/xhtml" class="ct-label ct-vertical ct-start" style="height: 24px; width: 30px">100</span></foreignObject><foreignObject width="30" height="24.375" x="10" y="136.875" style="overflow: visible;"><span xmlns="http://www.w3.org/1999/xhtml" class="ct-label ct-vertical ct-start" style="height: 24px; width: 30px">200</span></foreignObject><foreignObject width="30" height="24.375" x="10" y="112.5" style="overflow: visible;"><span xmlns="http://www.w3.org/1999/xhtml" class="ct-label ct-vertical ct-start" style="height: 24px; width: 30px">300</span></foreignObject><foreignObject width="30" height="24.375" x="10" y="88.125" style="overflow: visible;"><span xmlns="http://www.w3.org/1999/xhtml" class="ct-label ct-vertical ct-start" style="height: 24px; width: 30px">400</span></foreignObject><foreignObject width="30" height="24.375" x="10" y="63.75" style="overflow: visible;"><span xmlns="http://www.w3.org/1999/xhtml" class="ct-label ct-vertical ct-start" style="height: 24px; width: 30px">500</span></foreignObject><foreignObject width="30" height="24.375" x="10" y="39.375" style="overflow: visible;"><span xmlns="http://www.w3.org/1999/xhtml" class="ct-label ct-vertical ct-start" style="height: 24px; width: 30px">600</span></foreignObject><foreignObject width="30" height="24.375" x="10" y="15" style="overflow: visible;"><span xmlns="http://www.w3.org/1999/xhtml" class="ct-label ct-vertical ct-start" style="height: 24px; width: 30px">700</span></foreignObject><foreignObject width="30" height="30" x="10" y="-15" style="overflow: visible;"><span xmlns="http://www.w3.org/1999/xhtml" class="ct-label ct-vertstart" style="height: 30px; width: 30px">800</span></foreignObject></g></svg></div>
+                    </div>
+                    <div class="footer">
+                       	<div class="legend">
+                           	<i class="fa fa-circle text-info"></i> Open
+                           	<i class="fa fa-circle text-danger"></i> Click
+                           	<i class="fa fa-circle text-warning"></i> Click Second Time
+                       	</div>
+                       	<hr>
+                       	<div class="stats">
+                           	<i class="fa fa-history"></i> Updated 3 minutes ago
+                       	</div>                                    
+                    </div>
+                </div>		
+			</div>			
+		</div><!--ends charts row-->
+
+
+
+  		<div class="row">
+  			
+  			<div class=" col-xs-12 .col-sm-11 col-md-11 .col-lg-11 ">
+  				<div>
+  					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus provident, molestias harum laboriosam nostrum nam cupiditate minus, veritatis obcaecati, assumenda sapiente impedit velit dolorem ipsam officia cumque doloribus modi vitae!
+  				</div>
+  				<div>
+  					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus provident, molestias harum laboriosam nostrum nam cupiditate minus, veritatis obcaecati, assumenda sapiente impedit velit dolorem ipsam officia cumque doloribus modi vitae!
+  				</div>
+  				<div>
+  					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus provident, molestias harum laboriosam nostrum nam cupiditate minus, veritatis obcaecati, assumenda sapiente impedit velit dolorem ipsam officia cumque doloribus modi vitae!
+  				</div>
+  				<br>
+  				<hr>
+  				<br>
+  				<div class="table-responsive" >	
+                    <h4>DATOS AGROCLIMATICOS</h4>
+                    <hr>
+					<table class=" table table-striped table-bordered ">
+						<tbody>
+							<tr>
+								<th>&nbsp;</th>
+								<th>Enero</th>
+								<th>Febrero</th>
+								<th>Marzo</th>
+								<th>Abril</th>
+								<th>Mayo</th>
+								<th>Junio</th>
+								<th>Julio</th>
+								<th>Agosto</th>
+								<th>Septiembre</th>
+								<th>Octubre</th>
+								<th>Noviembre</th>
+								<th>Diciembre</th>
+								<th>Total</th>
+							</tr>
+							<tr>
+								<td>Temp. Observ. 7AM (°C) </td>
+								<td>19.8</td>
+								<td>20.1</td>
+								<td>22.4</td>
+								<td>24.6</td>
+								<td>26.3</td>
+								<td>26.2</td>
+								<td>25.6</td>
+								<td>25.5</td>
+								<td>25.2</td>
+								<td>24.2</td>
+								<td>22.4</td>
+								<td>20.8</td>
+								<td>23.59</td>
+							</tr>
+							<tr>
+								<td>Temp. Máx. (°C) </td>
+								<td>27.4</td>
+								<td>28.5</td>
+								<td>32.1</td>
+								<td>34.0</td>
+								<td>35.5</td>
+								<td>34.2</td>
+								<td>33.5</td>
+								<td>33.7</td>
+								<td>32.9</td>
+								<td>31.0</td>
+								<td>29.5</td>
+								<td>27.9</td>
+								<td>31.68</td>
+							</tr>
+							<tr>
+								<td>Temp. Mín. (°C) </td>
+								<td>17.8</td>
+								<td>17.9</td>
+								<td>19.8</td>
+								<td>21.5</td>
+								<td>22.7</td>
+								<td>22.9</td>
+								<td>22.4</td>
+								<td>22.5</td>
+								<td>22.5</td>
+								<td>21.7</td>
+								<td>20.0</td>
+								<td>18.6</td>
+								<td>20.86</td>
+							</tr>
+							<tr>
+								<td>Precipitación (mm) </td>
+								<td>138.5</td>
+								<td>96.6</td>
+								<td>53.5</td>
+								<td>46.0</td>
+								<td>70.0</td>
+								<td>230.4</td>
+								<td>154.8</td>
+								<td>222.7</td>
+								<td>333.8</td>
+								<td>334.4</td>
+								<td>169.3</td>
+								<td>126.8</td>
+								<td>1977</td>
+							</tr>
+							<tr>
+								<td>Granizo</td>
+								<td>0</td>
+								<td>0</td>
+								<td>0</td>
+								<td>0</td>
+								<td>0</td>
+								<td>0</td>
+								<td>0</td>
+								<td>0</td>
+								<td>0</td>
+								<td>0</td>
+								<td>0</td>
+								<td>0</td>
+								<td>0</td>
+							</tr>
+							<tr>
+								<td>Heladas </td>
+								<td>&nbsp;</td>
+								<td>&nbsp;</td>
+								<td>&nbsp;</td>
+								<td>&nbsp;</td>
+								<td>&nbsp;</td>
+								<td>&nbsp;</td>
+								<td>&nbsp;</td>
+								<td>&nbsp;</td>
+								<td>&nbsp;</td>
+								<td>&nbsp;</td>
+								<td>&nbsp;</td>
+								<td>&nbsp;</td>
+								<td>0</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				
+
+				
+
+
+				<section class="hsect"></section>
+				<section class="hsect"></section>
+				<section class="hsect"></section>
+			</div>
+			<div class=" col-xs-0 .col-sm-0 col-md-1 .col-lg-1  "></div>
+		</div>
+		
   	</div>
+	
+
 	<footer class="footer" >
 		<div class="container">
 			<h6>SIEMPA</h5>
 		</div>          
 	</footer>
+<!--
+#JS Scripts
+-->
+	
+<!-- Chartist -->
+	<script src="assets/js/chartist.min.js">
 </body>
 </html>

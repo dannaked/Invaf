@@ -21,3 +21,13 @@
 .hsect{
 	height: 500px;
 }
+.h-sidebar{
+	position: fixed;
+	top: 81px;
+
+}
+.nav
+.submenu-sidebar{
+	padding-left: 15px;
+	background-color: #f8f8f8;
+}
