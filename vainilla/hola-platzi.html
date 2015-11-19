@@ -1,6 +1,6 @@
 <template>
 	<p>
-		<strong>Hello World	</strong>
+		Hello World <strong> {{ Huaca }}	</strong>
 	</p>
 </template>
 
@@ -10,11 +10,11 @@
 			documentoAImportar = ( documentoImportador._currentScript || documentoImportador.currentScript ).ownerDocument,
 			template = documentoAImportar.querySelector( 'template' ).content,
 			prototipoDemiElemento = Object.create( HTMLElement.prototype );
-			prototipoDemiElemento.who = 'Platzi';
+			prototipoDemiElemento.who = 'Pzxlatzi';
 
 			prototipoDemiElemento.createdCallback = function(  ){
-
-				clone = documentoImportador.imporNode( template, true );
+				var shadowRoot = this.createShadowRoot(),
+					clone = documentoImportador.importNode( template, true );
 				shadowRoot.appendChild( clone );
 
 				this.strong = shadowRoot.querySelector( 'strong' );
@@ -42,7 +42,7 @@
 			}
 
 			window.miElemento = documentoImportador.registerElement( 'hola-platzi', {
-				prototype: prototipoDeMiElemento
+				prototype: prototipoDemiElemento
 			} );
 
 	} )( window, document );
