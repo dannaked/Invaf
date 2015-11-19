@@ -5,10 +5,46 @@
 </template>
 
 <script	charset="utf-8">
-	( funtion( window, document ){
+	( function( window, document ){
 		var documentoImportador = document,
 			documentoAImportar = ( documentoImportador._currentScript || documentoImportador.currentScript ).ownerDocument,
 			template = documentoAImportar.querySelector( 'template' ).content,
-	} )();
-	
+			prototipoDemiElemento = Object.create( HTMLElement.prototype );
+			prototipoDemiElemento.who = 'Platzi';
+
+			prototipoDemiElemento.createdCallback = function(  ){
+
+				clone = documentoImportador.imporNode( template, true );
+				shadowRoot.appendChild( clone );
+
+				this.strong = shadowRoot.querySelector( 'strong' );
+
+				if ( this.hasAttribute( 'who' ) ) {
+					var who = this.getAttribute( 'who' );
+					this.setWho( this.who );
+				} else {
+
+					this.setWho( this.who );
+
+				}
+
+			};
+
+			prototipoDemiElemento.attrubuteChagedCallback = function( attr, oldvalue, newvalue ){
+				if( attr === 'who' ){
+					this.setWho( newvalue );
+				}
+			}
+
+			prototipoDemiElemento.setWho = function( value ){
+				this.who = value;
+				this.strong.textContent = this.who;
+			}
+
+			window.miElemento = documentoImportador.registerElement( 'hola-platzi', {
+				prototype: prototipoDeMiElemento
+			} );
+
+	} )( window, document );
+
 </script>
