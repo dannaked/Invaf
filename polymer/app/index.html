@@ -88,6 +88,12 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             <iron-icon icon="mail"></iron-icon>
             <span>Contact</span>
           </a>
+
+          <a data-route="map" href="/map" on-click="onDataRouteClick">
+            <iron-icon icon="star"></iron-icon>
+            <span>Mapa</span>
+          </a>
+
         </paper-menu>
       </paper-scroll-header-panel>
 
@@ -176,6 +182,22 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                 <h2 class="page-title">Contact</h2>
                 <p>This is thelll contact section</p>
               </paper-material>
+            </section>
+
+            <section data-route="map">
+              <paper-material elevation="1">
+                <h2 class="page-title">Unscripted</h2>
+                <style>
+                  google-map {
+                    height: 500px;
+                  }
+                </style>
+                <google-map latitude="19.3852153" longitude="-99.1760077" zoom="15">
+                  <google-map-marker latitude="19.3968238" longitude="-99.1639122"
+      draggable="true" title="PARAMETRIX"></google-map-marker>
+                </google-map>
+
+
             </section>
 
           </iron-pages>

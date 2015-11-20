@@ -40,9 +40,13 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       app.route = 'contact';
     });
 
+    page('/map', scrollToTop, function() {
+      app.route = 'map';
+    });
+
     // add #! before urls
     page({
-      hashbang: true
+      hashbang: false
     });
 
   });
