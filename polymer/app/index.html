@@ -49,14 +49,46 @@
   </head>
 
   <body class="fullbleed layout vertical">
+<!-- Sync the browser any time is saved -->
     <span id="browser-sync-binding"></span>
-    <paper-scroll-header-panel class="flex">
-      <paper-toolbar>
+    <!-- -->
+<!--header -->
+    <header>
+    </header>
+    <paper-header-panel main fixed>
+      <paper-toolbar >
+        <paper-icon-button icon="menu" on-tap="menuAction"></paper-icon-button>
         <div>SIEMPA</div>
       </paper-toolbar>
-    </paper-scroll-header-panel>
+      <div class="content">
+        <section data-route="map">
+
+          <paper-material elevation="3">
+            <h2 class="page-title">Mapa unscripted</h2>
+            <style>
+              google-map {
+                height: 500px;
+              }
+            </style>
+            <google-map disable-Zoom latitude="19.3852153" longitude="-99.1760077" zoom="15">
+              <google-map-marker latitude="19.3968238" longitude="-99.1639122" draggable="true" title="PARAMETRIX"></google-map-marker>
+            </google-map>
+        </section>
 
 
+      </div>
+    </paper-header-panel>
 
+
+<!-- nav --
+    <nav class="menu-content">
+      <div>
+        <paper-menu>
+          <paper-item>Item 1</paper-item>
+          <paper-item>Item 2</paper-item>
+        </paper-menu>
+      </div>
+    </nav>
+-->
   </body>
 </html>
