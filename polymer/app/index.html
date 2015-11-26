@@ -62,7 +62,7 @@
 
 
 
-          <paper-menu class="list dropdown-content"  attr-for-selected="data-route" selected="[[route]]">
+          <paper-menu class="dropdown-content"  attr-for-selected="data-route" selected="[[route]]">
   <!-- paper-items- routed -->
             <a data-route="home" href="/" on-click="onDataRouteClick">
               <iron-icon icon="home"></iron-icon>
@@ -80,7 +80,11 @@
         </paper-menu-button>
         <div><h1>SIEMPA</h1></div>
       </paper-toolbar>
-      <div main class="content">
+
+    <paper-material>
+
+
+      <div main class="container">
         <iron-pages attr-for-selected="data-route" selected="{{route}}">
 
         <section data-route="home">
@@ -115,6 +119,7 @@
       </iron-pages>
 
       </div>
+      </paper-material>
     </paper-header-panel>
 
 <!-- nav --
