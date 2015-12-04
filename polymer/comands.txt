@@ -1,0 +1,2 @@
+# Comands
+* yo polymer:element nombre-con-guion 
